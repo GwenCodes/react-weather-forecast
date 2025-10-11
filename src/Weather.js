@@ -15,14 +15,14 @@ export default function Weather() {
               className="form-control"
             />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-3">
-            <input
-              type="submit"
-              value="Search"
-              className="btn btn-primary w-100 mt-2"
-            />
+          <div className="row">
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-primary w-100 mt-2"
+              />
+            </div>
           </div>
         </div>
       </form>
