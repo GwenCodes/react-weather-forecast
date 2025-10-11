@@ -27,7 +27,7 @@ export default function Weather() {
         </div>
       </form>
       <h1>Paris</h1>
-      <ul>
+      <ul className="weather-details">
         <li>Day and time</li>
         <li>Weather conditions</li>
       </ul>
@@ -41,7 +41,7 @@ export default function Weather() {
           <span className="units">°F</span>
         </div>
         <div className="col-6">
-          <ul>
+          <ul className="weather-details">
             <li>Precipitation: 0%</li>
             <li>Humidity: 62%</li>
             <li>Wind: 5mph</li>
