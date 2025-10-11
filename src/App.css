@@ -4,7 +4,6 @@
   border: 2px solid #8f8e8e;
   padding: 16px;
   border-radius: 4px;
-  text-align: center;
 }
 .App a {
   text-decoration: none;
@@ -14,6 +13,7 @@
 .App footer {
   font-size: 14px;
   margin: 10px 0;
+  text-align: center;
 }
 .App footer a {
   color: purple;
