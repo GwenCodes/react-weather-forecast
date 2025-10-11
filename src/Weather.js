@@ -30,6 +30,7 @@ export default function Weather() {
       <ul>
         <li>Day and time</li>
         <li>Weather conditions</li>
+        <li>Weather conditions</li>
       </ul>
       <div className="row">
         <div className="col-6">
@@ -37,11 +38,13 @@ export default function Weather() {
             src="https://www.gstatic.com/weather/conditions/v1/svg/clear_night_light.svg"
             alt="clear evening"
           />
-          65°F
+          <span className="temperature">65</span>
+          <span className="units">°F</span>
         </div>
         <div className="col-6">
           <ul>
             <li>Precipitation: 0%</li>
+            <li>Humidity: 62%</li>
             <li>Humidity: 62%</li>
             <li>Wind: 5mph</li>
           </ul>
