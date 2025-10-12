@@ -37,10 +37,10 @@ export default function Weather() {
               alt="clear evening"
               className="float-left"
             />
-          </div>
-          <div className="float-left">
-            <span className="temperature">65</span>
-            <span className="units">°F</span>
+            <div className="float-left">
+              <span className="temperature">65</span>
+              <span className="units">°F</span>
+            </div>
           </div>
         </div>
         <div className="col-6">
