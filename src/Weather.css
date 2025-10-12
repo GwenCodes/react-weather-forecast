@@ -36,3 +36,17 @@
   font-weight: 400;
   margin-left: 10px;
 }
+img {
+  height: 64px;
+  width: 64px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.units {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1px;
+  top: -34px;
+  margin-left: 5px;
+  position: relative;
+}

@@ -31,12 +31,17 @@ export default function Weather() {
       </ul>
       <div className="row">
         <div className="col-6">
-          <img
-            src="https://www.gstatic.com/weather/conditions/v1/svg/clear_night_light.svg"
-            alt="clear evening"
-          />
-          <span className="temperature">65</span>
-          <span className="units">°F</span>
+          <div className="clearfix">
+            <img
+              src="https://www.gstatic.com/weather/conditions/v1/svg/clear_night_light.svg"
+              alt="clear evening"
+              className="float-left"
+            />
+          </div>
+          <div className="float-left">
+            <span className="temperature">65</span>
+            <span className="units">°F</span>
+          </div>
         </div>
         <div className="col-6">
           <ul className="weather-details">
