@@ -10,7 +10,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       date: "Wednesday, 0700",
-      description: response.data.weather.description,
+      description: response.data.condition.description,
       icon: response.data.weather.icon,
       iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
       temperature: response.data.temperature.current,
