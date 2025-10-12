@@ -11,7 +11,7 @@ export default function Weather(props) {
       ready: true,
       date: "Wednesday, 0700",
       description: response.data.condition.description,
-      icon: response.data.weather.icon,
+      icon: response.data.condition.icon, // ✅ FIXED LINE
       iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
