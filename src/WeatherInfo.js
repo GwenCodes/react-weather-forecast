@@ -14,22 +14,21 @@ export default function WeatherInfo(props) {
       </ul>
       <div className="row nt-1">
         <div className="col-6">
-          <WeatherIcon code={props.data.icon} />
-          <div className="weather-main d-flex align-items-center">
-            <div className="temperature-display">
-              <span className="temperature">
-                {Math.round(props.data.temperature)}
-              </span>
-              <span className="units">°C</span>
+          <div className="clearfix">
+            <div className="float-left">
+              <WeatherIcon code={props.data.icon} size={60} />
+            </div>
+            <div className="float-left ">
+              <WeatherTemperature celsius={props.data.temperature} />
             </div>
           </div>
         </div>
-        <div className="col-6">
-          <ul className="weather-details">
-            <li>Humidity: {props.data.humidity}%</li>
-            <li>Wind: {props.data.wind} km/h</li>
-          </ul>
-        </div>
+      </div>
+      <div className="col-6">
+        <ul className="weather-details">
+          <li>Humidity: {props.data.humidity}%</li>
+          <li>Wind: {props.data.wind} km/h</li>
+        </ul>
       </div>
     </div>
   );
