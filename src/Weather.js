@@ -2,37 +2,38 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultcity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
-      date: new Date(response.data.time * 1000),
-      description: response.data.condition.description,
-      icon: response.data.condition.icon,
-      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+      coordinates: response.data.coordinates,
       temperature: response.data.temperature.current,
-      wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
+      date: new Date(response.data.time * 1000),
+      description: response.data.temperature.description,
+      icon: response.data.condition.icon,
+      wind: response.data.wind.speed,
       city: response.data.city,
+      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
   }
   if (weatherData.ready) {
     return (
       <div className="weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
                 type="search"
-                placeholder="Enter a city"
-                autoFocus="on"
-                autoComplete="off"
+                placeholder="Enter a city..."
                 className="form-control"
+                autoFocus="on"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
@@ -44,36 +45,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul className="weather-details">
-          <li>
-            <FormattedDate date={weatherData.date} />
-          </li>
-          <li>{weatherData.description}</li>
-        </ul>
-        <div className="row mt-1">
-          <div className="col-6">
-            <div className="weather-main d-flex align-items-center">
-              <img
-                src={weatherData.iconUrl}
-                alt={weatherData.description}
-                className="weather-icon"
-              />
-              <div className="temperature-display">
-                <span className="temperature">
-                  {Math.round(weatherData.temperature)}
-                </span>
-                <span className="units">°C</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <ul className="weather-details">
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} km/h</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
