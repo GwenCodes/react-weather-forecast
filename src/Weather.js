@@ -22,6 +22,19 @@ export default function Weather(props) {
       iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+  function search() {
+    const apiKey = "61dfa07e8o8462teba3fadad30e70d77";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultcity}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
   if (weatherData.ready) {
     return (
       <div className="weather">
@@ -49,9 +62,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "61dfa07e8o8462teba3fadad30e70d77";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultcity}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading...";
   }
 }
