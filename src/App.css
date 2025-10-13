@@ -1,9 +1,6 @@
 .App .container {
   max-width: 600px;
   margin: 30px auto;
-  border: 2px solid #8f8e8e;
-  padding: 16px;
-  border-radius: 4px;
 }
 .App a {
   text-decoration: none;
