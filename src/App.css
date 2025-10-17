@@ -6,9 +6,13 @@
 .App footer {
   font-size: 11px;
   margin: 10px 0;
+  text-align: center;
 }
 .App footer a {
   color: #000;
   text-decoration: none;
   font-weight: bold;
+}
+.App footer a:hover {
+  text-decoration: underline;
 }
