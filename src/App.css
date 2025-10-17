@@ -1,6 +1,7 @@
 .App {
   max-width: 600px;
   margin: 30px auto;
+  padding: 20px;
 }
 
 .App footer {
@@ -9,7 +10,7 @@
   text-align: center;
 }
 .App footer a {
-  color: #000;
+  color: #92028f;
   text-decoration: none;
   font-weight: bold;
 }
