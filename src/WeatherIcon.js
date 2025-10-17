@@ -24,11 +24,23 @@ export default function WeatherIcon(props) {
     "mist-day": "FOG",
     "mist-night": "FOG",
   };
+  const colorMapping = {
+    CLEAR_DAY: "#f39c12",
+    CLEAR_NIGHT: "#2c3e50",
+    PARTLY_CLOUDY_DAY: "#f1c40f",
+    PARTLY_CLOUDY_NIGHT: "#34495e",
+    CLOUDY: "#95a5a6",
+    RAIN: "#3498db",
+    SNOW: "#ecf0f1",
+    FOG: "#bdc3c7",
+  };
+  const iconCode = codeMapping[props.code];
+  const iconColor = colorMapping[iconCode] || "black";
 
   return (
     <ReactAnimatedWeather
-      icon={codeMapping[props.code]}
-      color="black"
+      icon={iconCode}
+      color={iconColor}
       size={props.size}
       animate={true}
     />
