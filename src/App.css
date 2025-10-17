@@ -1,17 +1,14 @@
-.App .container {
+.App {
   max-width: 600px;
   margin: 30px auto;
 }
-.App a {
-  text-decoration: none;
-  color: purple;
-}
 
 .App footer {
-  font-size: 12px;
-  text-align: center;
+  font-size: 11px;
+  margin: 10px 0;
 }
 .App footer a {
-  color: purple;
+  color: #000;
   text-decoration: none;
+  font-weight: bold;
 }
