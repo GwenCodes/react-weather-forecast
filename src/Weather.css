@@ -56,3 +56,7 @@
   position: relative;
   top: 10px;
 }
+.Weather canvas {
+  margin: 10px auto;
+  display: inline-block;
+}
